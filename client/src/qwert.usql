@@ -1,0 +1,14 @@
+@searchlog =
+    EXTRACT Id          int
+           
+    FROM "/convertedSellsInfo.csv"
+    USING Extractors.Csv();
+
+@rs1 =
+    SELECT FIRST_VALUE(Id) OVER(ORDER BY Id DESC) 
+    FROM @searchlog;
+   
+
+OUTPUT @rs1   
+    TO "/lastRowSellsData.csv"
+    USING Outputters.Csv();

@@ -1,0 +1,22 @@
+// Generated Code Behind Header
+USE DATABASE [master];
+USE SCHEMA [usql];
+// Generated Code Behind Header
+@searchlog =
+    EXTRACT Id          int
+           
+    FROM "/convertedSellsData.csv"
+    USING Extractors.Csv();
+
+@rs1 =
+    SELECT FIRST_VALUE(Id) OVER(ORDER BY Id DESC) 
+    FROM @searchlog;
+   
+
+OUTPUT @rs1   
+    TO "/lastRowSellsData.csv"
+    USING Outputters.Csv();
+// Generated Code Behind Footer
+USE DATABASE [master];
+USE SCHEMA [usql];
+// Generated Code Behind Footer

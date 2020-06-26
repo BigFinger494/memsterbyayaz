@@ -1,0 +1,14 @@
+{
+  "name": "MemsterByMe",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./serverSide/bin/www && cd client && npm start"
+  },
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  }
+}

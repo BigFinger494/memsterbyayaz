@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "cd client && npm start && cd .. && node ./serverSide/bin/www"
+    "start": "node ./serverSide/bin/www && cd client && npm start"
   },
   "dependencies": {
     
